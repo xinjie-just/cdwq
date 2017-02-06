@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+		<title>游客留言 | 四川文清消防工程有限公司</title>
+		<meta name="keywords" content="钢质防火门">
+		<meta name="description" content="钢质防火门,双扇带玻璃,钢质防火门">
+		<link rel="stylesheet" href="style/cdwq.css">
+	</head>
+	<body>
+		<header>
+			<nav class="nav">
+				<ul>
+					<li><a href='/intro/' title='企业简介'>企业简介</a></li>
+					<li><a href="/product/" title="产品中心">产品中心</a></li>
+					<li><a href="/case/" title="工程案例">工程案例</a></li>
+					<li><a href="/news/" title="公司动态">公司动态</a></li>
+				</ul>
+			</nav>
+			<img src="img/banner.jpg" alt="四川文清消防工程有限公司banner" class="banner">
+		</header>
+		<main class="container">
+			<div class="messages">
+				<div class="heading item-heading">
+					<h2>
+						<em>投诉意见</em>
+						<em><span>c</span>omplaints</em>
+					</h2>
+				</div>
+				<form method="post" action="" class="messages-box" onsubmit="return vailPhone()">
+					<div class="name">
+						<label for="name">姓名：</label>
+						<input type="text" id="name" required>
+					</div>
+					<div class="phone">
+						<label for="phone">电话：</label>
+						<input type="text" id="phone" required>
+					</div>
+					<div class="content">
+						<label for="content">留言内容：</label>
+						<textarea name="" id="content" placeholder="吐槽、发表意见、表扬..." required></textarea>
+					</div>
+					<div class="submit-or-reset clearfix">
+						<button type="submit" class="submit fl">提交</button>
+						<button type="reset" class="reset fr">重置</button>
+					</div>
+				</form>
+			</div>		
+		</main>
+		<footer>
+			<small>四川文清消防工程有限公司 版权所有 蜀ICP备：15034014号 ©Copyright <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a></small>
+		</footer>
+		<script src="script/jquery-1.12.4.min.js"></script>
+		<script src="script/cdwq.js"></script>
+		<script>
+			/*对表单进行提交前的判断*/
+			//验证手机号
+			function vailPhone(){
+				var flag = false;
+				var phone = $("#phone").val();
+				var phoneReg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;       
+				if(phone == ''){
+					alert("手机号码不能为空！");
+				}else if(phone.length != 11){
+					alert("请输入有效的手机号码！");
+				}else if(!phoneReg.test(phone)){
+					alert("请输入有效的手机号码！");
+				}else{
+					flag = true;
+				}
+				if(!flag) {
+					$("#phone").focus();
+					$("#phone").css("border", "1px solid #f00");
+				}else {
+					$("#phone").css("borderWidth", 0);
+				}
+				return flag;
+			}
+		</script>
+	</body>
+</html>
