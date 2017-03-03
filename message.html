@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -30,22 +29,28 @@
 						<em><span>v</span>isitor messages</em>
 					</h2>
 				</div>
-				<form method="post" action="" class="messages-box" onsubmit="return vailPhone()">
+				<form method="post" action="/plus/diy.php" enctype="multipart/form-data" class="messages-box" onsubmit="return vailPhone()">
+					<input type="hidden" name="action" value="post" />
+					<input type="hidden" name="diyid" value="1" />
+					<input type="hidden" name="do" value="2" />
+
 					<div class="name">
 						<label for="name">姓名：</label>
-						<input type="text" id="name" required>
+						<input type="text" name="name" id="name" value="" required>
 					</div>
 					<div class="phone">
 						<label for="phone">电话：</label>
-						<input type="text" id="phone" required>
+						<input type="text" name="phone" id="phone" value="" required>
 					</div>
 					<div class="content">
 						<label for="content">留言内容：</label>
-						<textarea name="" id="content" placeholder="吐槽、发表意见、表扬..." required></textarea>
+						<textarea name="content" id="content" placeholder="吐槽、发表意见、表扬..." required></textarea>
 					</div>
+					<input type="hidden" name="dede_fields" value="name,text;phone,text;content,multitext" />
+					<input type="hidden" name="dede_fieldshash" value="0ae45ef8a5220d734113575c9a27d9f2" />
 					<div class="submit-or-reset clearfix">
-						<button type="submit" class="submit fl">提交</button>
-						<button type="reset" class="reset fr">重置</button>
+						<button type="submit" name="submit" class="submit fl">提交</button>
+						<button type="reset" name="reset" class="reset fr">重置</button>
 					</div>
 				</form>
 			</div>		
